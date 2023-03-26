@@ -54,6 +54,7 @@ async function getClassId(
 }
 
 export async function reserveClass(crossfitClass: CrossfitClass) {
+  console.log('reservation in progress');
   const [id, [userInfo], date] = await Promise.all([
     getClassId(
       crossfitClass.time,
