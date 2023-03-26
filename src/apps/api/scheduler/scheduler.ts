@@ -1,22 +1,26 @@
 import cron from 'node-cron';
 import { CrossfitClass, reserveClass } from './class-reservator';
 
-const test: CrossfitClass = {
-  user: '',
-  option: 'Open Box',
-  time: '11:00 - 12:00',
-  timeOfDay: 'A.M',
-};
-
 export async function scheduleReservations() {
   cron.schedule(
-    '* 06 14 * * *',
+    '* 00 20 * * *',
     async () => {
-      const users = ['nachoruizpalomo@gmail.com'];
+      const crossfitClass: CrossfitClass = {
+        user: '',
+        option: 'Open Box',
+        time: '18:00 - 19:00',
+        timeOfDay: 'P.M',
+      };
+
+      const users = [
+        'nachoruizpalomo@gmail.com',
+        'Elcalavera9@gmail.com',
+        'davmaca@hotmail.com',
+      ];
 
       await Promise.all(
         users.map((user) => {
-          reserveClass({ ...test, user: user });
+          reserveClass({ ...crossfitClass, user: user });
         })
       );
     },
