@@ -9,7 +9,7 @@ const test: CrossfitClass = {
 };
 
 export async function scheduleReservations() {
-  cron.schedule('* 43 19 * * *', async () => {
+  cron.schedule('* 36 13 * * *', async () => {
     const users = ['nachoruizpalomo@gmail.com'];
 
     await Promise.all(
