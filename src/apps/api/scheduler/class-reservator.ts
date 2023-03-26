@@ -54,7 +54,6 @@ async function getClassId(
 }
 
 export async function reserveClass(crossfitClass: CrossfitClass) {
-  console.log('reservation in progress');
   const [id, [userInfo], date] = await Promise.all([
     getClassId(
       crossfitClass.time,
@@ -77,16 +76,10 @@ export async function reserveClass(crossfitClass: CrossfitClass) {
       ...data.getHeaders(),
     };
 
-    const result = await axios.post(
-      'https://crossfitedelweiss.aimharder.com/api/book',
-      data,
-      {
-        headers,
-        maxContentLength: Infinity,
-        maxBodyLength: Infinity,
-      }
-    );
-
-    console.log(result);
+    await axios.post('https://crossfitedelweiss.aimharder.com/api/book', data, {
+      headers,
+      maxContentLength: Infinity,
+      maxBodyLength: Infinity,
+    });
   }
 }
