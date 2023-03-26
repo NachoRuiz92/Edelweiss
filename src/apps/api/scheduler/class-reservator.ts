@@ -76,10 +76,16 @@ export async function reserveClass(crossfitClass: CrossfitClass) {
       ...data.getHeaders(),
     };
 
-    await axios.post('https://crossfitedelweiss.aimharder.com/api/book', data, {
-      headers,
-      maxContentLength: Infinity,
-      maxBodyLength: Infinity,
-    });
+    const result = await axios.post(
+      'https://crossfitedelweiss.aimharder.com/api/book',
+      data,
+      {
+        headers,
+        maxContentLength: Infinity,
+        maxBodyLength: Infinity,
+      }
+    );
+
+    console.log(result);
   }
 }
