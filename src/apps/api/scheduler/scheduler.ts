@@ -28,4 +28,31 @@ export async function scheduleReservations() {
       timezone: 'Europe/Madrid',
     }
   );
+
+  cron.schedule(
+    '* 00 21 * * *',
+    async () => {
+      const crossfitClass: CrossfitClass = {
+        user: '',
+        option: 'Open Box',
+        time: '19:00 - 20:00',
+        timeOfDay: 'P.M',
+      };
+
+      const users = [
+        'nachoruizpalomo@gmail.com',
+        'Elcalavera9@gmail.com',
+        'davmaca@hotmail.com',
+      ];
+
+      await Promise.all(
+        users.map((user) => {
+          reserveClass({ ...crossfitClass, user: user });
+        })
+      );
+    },
+    {
+      timezone: 'Europe/Madrid',
+    }
+  );
 }
