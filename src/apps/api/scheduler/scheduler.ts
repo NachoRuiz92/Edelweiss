@@ -9,9 +9,9 @@ const test: CrossfitClass = {
 };
 
 export async function scheduleReservations() {
-  const users = ['nachoruizpalomo@gmail.com', 'Elcalavera9@gmail.com'];
-
   cron.schedule('* 43 19 * * *', async () => {
+    const users = ['nachoruizpalomo@gmail.com', 'Elcalavera9@gmail.com'];
+
     await Promise.all(
       users.map((user) => {
         reserveClass({ ...test, user: user });
