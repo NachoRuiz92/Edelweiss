@@ -16,6 +16,7 @@ export async function scheduleReservations() {
         'nachoruizpalomo@gmail.com',
         'Elcalavera9@gmail.com',
         'davmaca@hotmail.com',
+        'garviester1975@hotmail.com',
       ];
 
       await Promise.all(
@@ -35,7 +36,7 @@ export async function scheduleReservations() {
       const crossfitClass: CrossfitClass = {
         user: '',
         option: 'Open Box',
-        time: '19:00 - 20:00',
+        time: '18:00 - 19:00',
         timeOfDay: 'P.M',
       };
 
@@ -43,6 +44,7 @@ export async function scheduleReservations() {
         'nachoruizpalomo@gmail.com',
         'Elcalavera9@gmail.com',
         'davmaca@hotmail.com',
+        'garviester1975@hotmail.com',
       ];
 
       await Promise.all(

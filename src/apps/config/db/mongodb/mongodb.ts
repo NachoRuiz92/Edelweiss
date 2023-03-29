@@ -14,7 +14,7 @@ export function mongodbConnectionBuilder(
 
         console.log('connected to MongoDB');
       } catch (error) {
-        console.log('Error connecting to MongoDb');
+        console.log('Error connecting to MongoDb', error);
       }
     },
   };
