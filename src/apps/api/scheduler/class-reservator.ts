@@ -7,7 +7,11 @@ type ClassOption = 'Open Box';
 
 type TimeOfDay = 'A.M' | 'P.M';
 
-type classHours = '18:00 - 19:00' | '19:00 - 20:00' | '11:00 - 12:00';
+type classHours =
+  | '18:00 - 19:00'
+  | '19:00 - 20:00'
+  | '11:00 - 12:00'
+  | '07:00 - 08:00';
 
 export interface CrossfitClass {
   user: string;
@@ -68,7 +72,7 @@ export async function reserveClass(crossfitClass: CrossfitClass) {
     const data = new FormData();
     data.append('id', id);
     data.append('day', date);
-    data.append('insist', '0');
+    data.append('insist', '1');
     data.append('familyId', '');
 
     const headers = {
@@ -76,10 +80,19 @@ export async function reserveClass(crossfitClass: CrossfitClass) {
       ...data.getHeaders(),
     };
 
-    await axios.post('https://crossfitedelweiss.aimharder.com/api/book', data, {
-      headers,
-      maxContentLength: Infinity,
-      maxBodyLength: Infinity,
-    });
+    const response = await axios.post(
+      'https://crossfitedelweiss.aimharder.com/api/book',
+      data,
+      {
+        headers,
+        maxContentLength: Infinity,
+        maxBodyLength: Infinity,
+      }
+    );
+
+    console.log(
+      `${new Date().toLocaleTimeString()} ${crossfitClass.user} result : `,
+      response.data
+    );
   }
 }
