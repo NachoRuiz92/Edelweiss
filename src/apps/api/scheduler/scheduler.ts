@@ -82,7 +82,7 @@ export async function scheduleReservations() {
       const crossfitClass: CrossfitClass = {
         user: '',
         option: 'Open Box',
-        time: '18:00 - 19:00',
+        time: '19:00 - 20:00',
         timeOfDay: 'P.M',
       };
 
