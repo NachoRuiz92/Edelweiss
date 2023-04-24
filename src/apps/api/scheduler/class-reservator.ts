@@ -11,7 +11,8 @@ type classHours =
   | '18:00 - 19:00'
   | '19:00 - 20:00'
   | '11:00 - 12:00'
-  | '12:00 - 13:00';
+  | '12:00 - 13:00'
+  | '15:00 - 16:00';
 
 export interface CrossfitClass {
   user: string;

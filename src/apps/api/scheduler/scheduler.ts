@@ -3,7 +3,7 @@ import { CrossfitClass, reserveClass } from './class-reservator';
 
 export async function scheduleReservations() {
   cron.schedule(
-    '00 20 * * *',
+    '01 00 20 * * *',
     async () => {
       const crossfitClass: CrossfitClass = {
         user: '',
@@ -77,7 +77,7 @@ export async function scheduleReservations() {
   );
 
   cron.schedule(
-    '00 21 * * *',
+    '01 00 21 * * *',
     async () => {
       const crossfitClass: CrossfitClass = {
         user: '',
