@@ -14,7 +14,6 @@ export async function scheduleReservations() {
 
       const users = [
         'nachoruizpalomo@gmail.com',
-        'Elcalavera9@gmail.com',
         'davmaca@hotmail.com',
         'garviester1975@hotmail.com',
       ];
@@ -40,7 +39,7 @@ export async function scheduleReservations() {
         timeOfDay: 'A.M',
       };
 
-      const users = ['nachoruizpalomo@gmail.com', 'Elcalavera9@gmail.com'];
+      const users = ['nachoruizpalomo@gmail.com'];
 
       await Promise.all(
         users.map((user) => {
@@ -63,7 +62,7 @@ export async function scheduleReservations() {
         timeOfDay: 'A.M',
       };
 
-      const users = ['nachoruizpalomo@gmail.com', 'Elcalavera9@gmail.com'];
+      const users = ['nachoruizpalomo@gmail.com'];
 
       await Promise.all(
         users.map((user) => {
@@ -88,7 +87,6 @@ export async function scheduleReservations() {
 
       const users = [
         'nachoruizpalomo@gmail.com',
-        'Elcalavera9@gmail.com',
         'davmaca@hotmail.com',
         'garviester1975@hotmail.com',
       ];
